@@ -1,13 +1,15 @@
 from flask import Flask, jsonify
-import os
 
 app = Flask(__name__)
 
-
+# Define a route for the API
 @app.route('/')
-def index():
-    return jsonify({"Choo Choo": "Welcome to your Flask app 🚅"})
-
+def get_name():
+    # Your logic to fetch a name can go here
+    return 'hello'
+    
+    # Returning the name in JSON format
+    
 
 if __name__ == '__main__':
-    app.run(debug=True, port=os.getenv("PORT", default=5000))
+    app.run(debug=True,port=8000)
